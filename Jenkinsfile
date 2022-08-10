@@ -2,12 +2,12 @@ pipeline {
     agent any
     environment {
         AWS_ACCOUNT_ID="213995228327"
-        AWS_DEFAULT_REGION="us-east-1" 
+        AWS_DEFAULT_REGION="ap-south-1" 
 	CLUSTER_NAME="default"
 	SERVICE_NAME="nodejsContainer-service"
 	TASK_DEFINITION_NAME="first-run-task-definition"
 	DESIRED_COUNT="1"
-        IMAGE_REPO_NAME="demojenkins"
+        IMAGE_REPO_NAME="jenkinsecr"
         IMAGE_TAG="${env.BUILD_ID}"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
 	registryCredential = "demo-admin-user"
